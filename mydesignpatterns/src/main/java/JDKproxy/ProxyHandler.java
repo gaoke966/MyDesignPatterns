@@ -1,4 +1,4 @@
-package proxy;
+package JDKproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -23,7 +23,7 @@ public class ProxyHandler implements InvocationHandler{
         //return (TargetInterface) Proxy.newProxyInstance(TargetInterface.class.getClassLoader(),TargetInterface.class.getInterfaces(),this);
     }
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("proxy.invoke:"+method.getName());
+        System.out.println("JDKproxy.invoke:"+method.getName());
         return method.invoke(target,args);
     }
 }
